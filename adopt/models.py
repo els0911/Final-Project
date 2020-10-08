@@ -39,7 +39,7 @@ class Pet(models.Model):
     )
 
     profile_image = models.ImageField(
-            help_text=_('Profile picture of pet'),
+            help_text=_('Profile picture of a pet'),
             blank=True,
             upload_to='profile_images',
     )
