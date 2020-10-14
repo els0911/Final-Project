@@ -14,13 +14,13 @@ class Command(BaseCommand):
 
         with open(file_) as fp:
             reader = csv.DictReader(fp)
-         
+            
+            unique_squirrels = []
             for dict_ in reader:
-                print(dict_)
                 obj = Squirrel()
                 obj.Latitude=dict_['X']
                 obj.Longitude=dict_['Y']
-                obj.Unique_Squirrel_ID=dict_['Unique Squirrel ID'] 
+                obj.Unique_Squirrel_ID=dict_['Unique Squirrel ID']
                 obj.Shift=dict_['Shift']
                 obj.Date=dict_['Date'][4:]+'-'+dict_['Date'][:2]+'-'+dict_['Date'][2:4]
                 obj.Age=dict_['Age']
@@ -41,7 +41,7 @@ class Command(BaseCommand):
                 obj.Approaches=dict_['Approaches'].lower() == 'true'
                 obj.Indifferent=dict_['Indifferent'].lower() == 'true'
                 obj.Runs_From=dict_['Runs from'].lower() == 'true'
-                print(obj)
-                obj.save()
+                unique_squirrels.append(obj) 
+            msg = f'You imported the file'
 
-        msg = f'You imported the file'
+
