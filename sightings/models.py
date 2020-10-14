@@ -13,7 +13,7 @@ class Squirrel(models.Model):
     Unique_Squirrel_ID = models.CharField(
         max_length=100,
         unique=True,
-        blank=False,
+        blank=True,
     )
 
     Shift = models.CharField(
@@ -101,3 +101,6 @@ class Squirrel(models.Model):
     Runs_From = models.BooleanField(
         blank=True,
     )
+
+    def __str__(self):
+        return self.Unique_Squirrel_ID

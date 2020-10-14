@@ -5,7 +5,7 @@ from .models import Squirrel
 
 class AddForm(ModelForm):
     class Meta:
-        model = Add
+        model = Squirrel
         fields = [
             'Latitude',
             'Longitude',
@@ -30,4 +30,15 @@ class AddForm(ModelForm):
             'Approaches',
             'Indifferent',
             'Runs_From',
+        ]
+
+class UpdateForm(ModelForm):
+    class Meta:
+        fields = [
+            'Latitude',
+            'Longitude',
+            'Unique_Squirrel_ID',
+            'Shift',
+            'Date',
+            'Age',
         ]

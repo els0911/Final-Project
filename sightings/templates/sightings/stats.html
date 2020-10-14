@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+        .header {
+            padding: 60px;
+            text-align: center;
+            background: #eea29a;
+            color: white;
+            font-size: 30px;
+        }
+
+        h1 { color: #FFFFFF; font-family: 'Helvetica Neue', sans-serif; font-size: 275px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+
+        h3 { color: #FFFFFF; font-family: 'Open Sans', sans-serif; font-size: 30px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+
+        .button {
+            background-color: #eea29a;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <header class='header'>
+            <h1>Squirrel</h1>
+            <h3>Display statistics for 5 chosen attributes</h3>
+        </header>
+
+
+        <main>
+        	<li>In this data set, we have a total of {{total}} observations.</li>
+      		<br>
+      		<li>Latitiude：The minimum latitude is {{lattitude.minimum}}</li>
+      		<li>Latitiude：The Maxiimum latitude is {{lattitude.maximum}}</li>
+      		<br>
+      		<li>Longitude：The minimum longitude is {{longitude.minimum}}</li>
+      		<li>Longitude：The maximum longitude is {{longitude.maximum}}</li>
+      		<br>
+      		<li>shift: {{shift}}</li>
+      		<br>
+     		  <li>Running: {{running}}</li>
+      		<br>
+      		<li>Primary_fur_color: {{primary_fur_color}}</li></ul>
+    	</main>
+
+      <footer>
+        <p>You have reached the end of the list</p>
+        <small> Follow our github <a href="https://github.com/kangyan0902/squirrel_tracker">click me</a>.</small>
+        </footer>
+
+
+    </body>
+</html>
