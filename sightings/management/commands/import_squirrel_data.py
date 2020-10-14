@@ -15,7 +15,7 @@ class Command(BaseCommand):
         with open(file_) as fp:
             reader = csv.DictReader(fp)
             
-            unique_squirrels = []
+        
             for dict_ in reader:
                 obj = Squirrel()
                 obj.Latitude=dict_['X']
@@ -27,21 +27,23 @@ class Command(BaseCommand):
                 obj.Primary_Fur_Color=dict_['Primary Fur Color']
                 obj.Location=dict_['Location']
                 obj.Specific_Location=dict_['Specific Location']
-                obj.Running=dict_['Running'].lower() == 'true'
-                obj.Chasing=dict_['Chasing'].lower() == 'true'
-                obj.Climbing=dict_['Climbing'].lower() == 'true'
-                obj.Eating=dict_['Eating'].lower() == 'true'
-                obj.Foraging=dict_['Foraging'].lower() == 'true'
+                obj.Running=dict_['Running']
+                obj.Chasing=dict_['Chasing']
+                obj.Climbing=dict_['Climbing']
+                obj.Eating=True if dict_['Eating'].lower() == 'true' else False
+                
+                obj.Foraging=dict_['Foraging']
                 obj.Other_Activities=dict_['Other Activities']
-                obj.Kuks=dict_['Kuks'].lower() == 'true'
-                obj.Quaas=dict_['Quaas'].lower() == 'true'
-                obj.Moans=dict_['Moans'].lower() == 'true'
-                obj.Tail_Flags=dict_['Tail flags'].lower() == 'true'
-                obj.Tail_Twitches=dict_['Tail twitches'].lower() == 'true'
-                obj.Approaches=dict_['Approaches'].lower() == 'true'
-                obj.Indifferent=dict_['Indifferent'].lower() == 'true'
-                obj.Runs_From=dict_['Runs from'].lower() == 'true'
-                unique_squirrels.append(obj) 
-            msg = f'You imported the file'
+                print(obj.Other_Activities)
+                obj.Kuks=dict_['Kuks']
+                obj.Quaas=dict_['Quaas']
+                obj.Moans=dict_['Moans']
+                obj.Tail_Flags=dict_['Tail flags']
+                obj.Tail_Twitches=dict_['Tail twitches']
+                obj.Approaches=dict_['Approaches']
+                obj.Indifferent=dict_['Indifferent']
+                obj.Runs_From=dict_['Runs from']
+             
+        
 
 

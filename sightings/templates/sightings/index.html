@@ -55,32 +55,32 @@
           <th>indifferent</th>
           <th>runs_from</th></tr>
       </thead>
-      <tbody>{% for row in users %}
+      <tbody>{% for row in squirrels %}
         <tr>
-          <td>{{row.latitude}}</td>
-          <td>{{row.longitude}}</td>
+          <td>{{row.Latitude}}</td>
+          <td>{{row.Longitude}}</td>
           <td>
-            <a href="/sightings/{{row.unique_squirrel_id}}/">{{row.unique_squirrel_id}}</a></td>
-          <td>{{row.shift}}</td>
-          <td nowrap="nowrap">{{row.date|date:"F j, Y"}}</td>
-          <td>{{row.age}}</td>
-          <td>{{row.primary_fur_color}}</td>
-          <td nowrap="nowrap">{{row.location}}</td>
-          <td>{{row.specific_location}}</td>
-          <td>{{row.running}}</td>
-          <td>{{row.chasing}}</td>
-          <td>{{row.climbing}}</td>
-          <td>{{row.eating}}</td>
-          <td>{{row.foraging}}</td>
-          <td>{{row.other_activities}}</td>
-          <td>{{row.kuks}}</td>
-          <td>{{row.quaas}}</td>
-          <td>{{row.moans}}</td>
-          <td>{{row.tail_flags}}</td>
-          <td>{{row.tail_twitches}}</td>
-          <td>{{row.approaches}}</td>
-          <td>{{row.indifferent}}</td>
-          <td>{{row.runs_from}}</td>
+            <a href="/sightings/{{row.Unique_Squirrel_ID}}/">{{row.Unique_Squirrel_ID}}</a></td>
+          <td>{{row.Shift}}</td>
+          <td nowrap="nowrap">{{row.Date|date:"F j, Y"}}</td>
+          <td>{{row.Age}}</td>
+          <td>{{row.Primary_Fur_Color}}</td>
+          <td nowrap="nowrap">{{row.Location}}</td>
+          <td>{{row.Specific_Location}}</td>
+          <td>{{row.Running}}</td>
+          <td>{{row.Chasing}}</td>
+          <td>{{row.Climbing}}</td>
+          <td>{{row.Eating}}</td>
+          <td>{{row.Foraging}}</td>
+          <td>{{row.Other_Activities}}</td>
+          <td>{{row.Kuks}}</td>
+          <td>{{row.Quaas}}</td>
+          <td>{{row.Moans}}</td>
+          <td>{{row.Tail_Flags}}</td>
+          <td>{{row.Tail_Twitches}}</td>
+          <td>{{row.Approaches}}</td>
+          <td>{{row.Indifferent}}</td>
+          <td>{{row.Runs_From}}</td>
           <td>
             <a href="/sightings/{{row.unique_squirrel_id}}/">edit</a></td>
           <td>
