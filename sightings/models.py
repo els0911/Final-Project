@@ -12,7 +12,7 @@ class Squirrel(models.Model):
 
     Unique_Squirrel_ID = models.CharField(
         max_length=100,
-        blank=True,
+        blank=False,
         unique=True,
     )
 
@@ -52,19 +52,22 @@ class Squirrel(models.Model):
 
     Chasing = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Climbing = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Eating = models.BooleanField(
         blank=True,
-        default=True,
+        default=False,
     )
 
     Foraging = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Other_Activities = models.CharField(
@@ -74,34 +77,42 @@ class Squirrel(models.Model):
 
     Kuks = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Quaas = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Moans = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Tail_Flags = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Tail_Twitches = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Approaches = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Indifferent = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     Runs_From = models.BooleanField(
         blank=True,
+        default=False,
     )
 
     def __str__(self):

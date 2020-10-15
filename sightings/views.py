@@ -1,6 +1,6 @@
 from django.shortcuts import render
   
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 from django.http import JsonResponse
 
@@ -25,9 +25,10 @@ def update(request, squirrel_id):
         form = UpdateForm(request.POST, instance=squirrel)
         if form.is_valid():
             form.save()
-            return redirect(f'/sightings/{Unique_Squirrel_ID}')
-    else:
-        form = UpdateForm(instance=squirrel)
+            redirect(f'/sightings/{Unique_Squirrel_ID}')
+            return JsonResponse({})
+        else:
+            return JsonResponse({'errors': form.errors}, status=400)
 
     context = {
         'form': form,
