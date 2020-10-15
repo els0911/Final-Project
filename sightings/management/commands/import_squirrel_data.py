@@ -44,6 +44,5 @@ class Command(BaseCommand):
                     obj.Approaches=True if dict_['Approaches'].lower() == 'true' else False
                     obj.Indifferent=True if dict_['Indifferent'].lower() == 'true' else False
                     obj.Runs_From=True if dict_['Runs from'].lower() == 'true' else False
-                    print(obj)
                     obj.save()
                     unique.append(dict_['Unique Squirrel ID'])
