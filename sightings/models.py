@@ -4,125 +4,115 @@ from django.utils.translation import gettext as _
 class Squirrel(models.Model):
     Latitude = models.FloatField(
         blank=False,
-        null=False,
     )
 
     Longitude = models.FloatField(
         blank=False,
-        null=False,
     )
 
     Unique_Squirrel_ID = models.CharField(
         max_length=100,
-        blank=True,
-        null=True,
+        blank=False,
         unique=True,
     )
 
     Shift = models.CharField(
         max_length=100,
         blank=True,
-        null=True,
     )
 
     Date = models.DateField(
         blank=True,
-        null=True,
     )
 
     Age = models.CharField(
         max_length=100,
         blank=True,
-        null=True,
     )
 
     Primary_Fur_Color = models.CharField(
         max_length=100,
         blank=True,
-        null=True,
     )
 
     Location = models.CharField(
         max_length=100,
         blank=True,
-        null=True,
     )
 
     Specific_Location = models.CharField(
         max_length=100,
         blank=True,
-        null=True,
     )
 
     Running = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Chasing = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Climbing = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Eating = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Foraging = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Other_Activities = models.CharField(
         max_length=100,
         blank=True,
-        null=True,
     )
 
     Kuks = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Quaas = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Moans = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Tail_Flags = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Tail_Twitches = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Approaches = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Indifferent = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     Runs_From = models.BooleanField(
         blank=True,
-        null=True,
+        default=False,
     )
 
     def __str__(self):
