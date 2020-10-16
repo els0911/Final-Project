@@ -34,6 +34,7 @@ class AddForm(ModelForm):
 
 class UpdateForm(ModelForm):
     class Meta:
+        model = Squirrel
         fields = [
             'Latitude',
             'Longitude',

@@ -24,11 +24,15 @@
     </div>
   </div>
 </nav>
-		<form method="post">{% csrf_token %}
-			{{form.as_p}}
-			<br>
-			<input type="submit" name="Submit">
-		</form>
+<form method="post">{% csrf_token %}
+    {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
 <footer class="text-muted">
       <div class="container">
         <p class="float-right">
