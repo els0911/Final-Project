@@ -18,11 +18,11 @@ class Squirrel(models.Model):
 
     Shift = models.CharField(
         max_length=100,
-        blank=True,
+        blank=False,
     )
 
     Date = models.DateField(
-        blank=True,
+        blank=False,
     )
 
     Age = models.CharField(

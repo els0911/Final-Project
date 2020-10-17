@@ -8,6 +8,7 @@
   </head>
   <style>
   body{padding-top: 60px;}
+  table,th,td{border: 1px}
   </style>
   <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -27,14 +28,56 @@
     <table class="table table-hover table-striped table-bordered table-responsive">
       <thead class="thead-light">
         <tr>
-          <th style="text-align:center;">Unique Squirrel ID</th>
-	  <th style="text-align:center;">Date</th>
+          <th style="text-align:center;" nowrap="nowrap">Unique Squirrel ID</th>
+	  <th style="text-align:center;" nowrap="nowrap">Latitude</th>
+	  <th style="text-align:center;" nowrap="nowrap">Longitude</th>
+	  <th style="text-align:center;" nowrap="nowrap">Shift</th>
+	  <th style="text-align:center;" nowrap="nowrap">Date</th>
+	  <th style="text-align:center;" nowrap="nowrap">Age</th>
+	  <th style="text-align:center;" nowrap="nowrap">Primary Fur Color</th>
+	  <th style="text-align:center;" nowrap="nowrap">Location</th>
+	  <th style="text-align:center;" nowrap="nowrap">Specific Location</th>
+	  <th style="text-align:center;" nowrap="nowrap">Running</th>
+	  <th style="text-align:center;" nowrap="nowrap">Chasing</th>
+	  <th style="text-align:center;" nowrap="nowrap">Climbing</th>
+	  <th style="text-align:center;" nowrap="nowrap">Eating</th>
+	  <th style="text-align:center;" nowrap="nowrap">Foraging</th>
+	  <th style="text-align:center;" nowrap="nowrap">Other Activities</th>
+	  <th style="text-align:center;" nowrap="nowrap">Kuks</th>
+	  <th style="text-align:center;" nowrap="nowrap">Quaas</th>
+	  <th style="text-align:center;" nowrap="nowrap">Moans</th>
+	  <th style="text-align:center;" nowrap="nowrap">Tail flags</th>
+	  <th style="text-align:center;" nowrap="nowrap">Tail twitches</th>
+	  <th style="text-align:center;" nowrap="nowrap">Approaches</th>
+	  <th style="text-align:center;" nowrap="nowrap">Indifferent</th>
+	  <th style="text-align:center;" nowrap="nowrap">Runs from</th>
       </thead>
       <tbody>{% for row in squirrels %}
         <tr>
-          <td>
+          <td nowrap="nowrap">
             <a href="/sightings/{{row.Unique_Squirrel_ID}}/">{{row.Unique_Squirrel_ID}}</a></td>
-          <td>{{row.Date}}</td>
+          <td nowrap="nowrap">{{row.Latitude}}</td>
+	  <td nowrap="nowrap">{{row.Longitude}}</td>
+	  <td nowrap="nowrap">{{row.Shift}}</td>
+	  <td nowrap="nowrap">{{row.Date}}</td>
+	  <td nowrap="nowrap">{{row.Age}}</td>
+	  <td nowrap="nowrap">{{row.Primary_Fur_Color}}</td>
+	  <td nowrap="nowrap">{{row.Location}}</td>
+	  <td>{{row.Specific_Location}}</td>
+	  <td nowrap="nowrap">{{row.Running}}</td>
+	  <td nowrap="nowrap">{{row.Chasing}}</td>
+	  <td nowrap="nowrap">{{row.Climbing}}</td>
+	  <td nowrap="nowrap">{{row.Eating}}</td>
+	  <td nowrap="nowrap">{{row.Foraging}}</td>
+	  <td>{{row.Other_Activities}}</td>
+	  <td nowrap="nowrap">{{row.Kuks}}</td>
+	  <td nowrap="nowrap">{{row.Quaas}}</td>
+	  <td nowrap="nowrap">{{row.Moans}}</td>
+	  <td nowrap="nowrap">{{row.Tail_Flags}}</td>
+	  <td nowrap="nowrap">{{row.Tail_Twitches}}</td>
+	  <td nowrap="nowrap">{{row.Approaches}}</td>
+	  <td nowrap="nowrap">{{row.Indifferent}}</td>
+	  <td nowrap="nowrap">{{row.Runs_From}}</td>
         </tr>{% endfor %}</tbody>
     </table>
   <footer class="text-muted">

@@ -31,15 +31,3 @@ class AddForm(ModelForm):
             'Indifferent',
             'Runs_From',
         ]
-
-class UpdateForm(ModelForm):
-    class Meta:
-        model = Squirrel
-        fields = [
-            'Latitude',
-            'Longitude',
-            'Unique_Squirrel_ID',
-            'Shift',
-            'Date',
-            'Age',
-        ]
