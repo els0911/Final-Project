@@ -21,9 +21,24 @@
       html,body {
         height: 100%;
       }
+      body{padding-top: 60px;}
     </style>
   </head>
   <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/sightings">Squirrel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-link active" href="/sightings">Home<span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="/sightings/add">Create A New Sighting</a>
+      <a class="nav-link" href="/map">Map</a>
+      <a class="nav-link" href="/sightings/stats">General Statistics</a>
+    </div>
+  </div>
+</nav>
     <div id="map" class="container-fluid h-100"></div>
 
     <!-- Optional JavaScript -->
@@ -51,8 +66,8 @@
         <!-- L.Icon.Default.prototype.options.shadowSize = 15; -->
         <!-- L.Icon.Default.prototype.options.shadowAnchor = [0, 0]; -->
 
-        {% for sighting in sightings %}
-          var point_lat_lon = [{{ sighting.latitude }}, {{ sighting.longitude }}];
+        {% for row in squirrels %}
+          var point_lat_lon = [{{ row.Longitude }}, {{ row.Latitude }}];
           var marker = L.marker(point_lat_lon).addTo(map);
         {% endfor %}
     </script>

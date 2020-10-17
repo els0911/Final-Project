@@ -17,8 +17,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link active" href="/sightings">Home<span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="/sightings/add">Create A New Sighting</a>
+      <a class="nav-link" href="/sightings">Home<span class="sr-only">(current)</span></a>
+      <a class="nav-link active" href="/sightings/add">Create A New Sighting</a>
       <a class="nav-link" href="/map">Map</a>
       <a class="nav-link" href="/sightings/stats">General Statistics</a>
     </div>
@@ -31,7 +31,7 @@
         {{ field.label_tag }} {{ field }}
     </div>
     {% endfor %}
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Add</button>
 </form>
 <footer class="text-muted">
       <div class="container">
@@ -50,4 +50,25 @@
     {% endblock %}
   </body>
 </html>
+<script>
+    var createAllErrors = function() {
+        var form = $( this ),
+            errorList = $( "ul.errorMessages", form );
 
+        var showAllErrorMessages = function() {
+            errorList.empty();
+
+            // Find all invalid fields within the form.
+            var invalidFields = form.find( ":invalid" ).each( function( index, node ) {
+
+                // Find the field's corresponding label
+                var label = $( "label[for=" + node.id + "] "),
+                    // Opera incorrectly does not fill the validationMessage property.
+                    message = node.validationMessage || 'Invalid value.';
+
+                errorList
+                    .show()
+                    .append( "<li><span>" + label.html() + "</span> " + message + "</li>" );
+            });
+        };
+</script>

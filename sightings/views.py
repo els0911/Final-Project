@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 from django.http import JsonResponse
 
-from .forms import AddForm, UpdateForm
+from .forms import AddForm
 
 from django.db.models import Avg, Max, Min, Count
 
@@ -20,20 +20,19 @@ def index(request):
     return render(request, 'sightings/index.html', context)
 
 def update(request, squirrel_id):
-    squirrel = get_object_or_404(Squirrel, Unique_Squirrel_ID=squirrel_id) 
+    squirrel = get_object_or_404(Squirrel, Unique_Squirrel_ID=squirrel_id)
     if request.method == 'POST':
-        form = UpdateForm(request.POST, instance=squirrel)
+        form = AddForm(request.POST, instance=squirrel)
         if form.is_valid():
             form.save()
-            redirect(f'/sightings/{Unique_Squirrel_ID}')
-            return JsonResponse({})
-        else:
-            return JsonResponse({'errors': form.errors}, status=400)
+            return redirect(f'/sightings/')
+    else:
+        form = AddForm(instance=squirrel)
 
     context = {
         'form': form,
     }
-    return render(request, 'sightings/update.html', context)
+    return render(request, 'sightings/update.html', context) 
 
 
 def add(request):

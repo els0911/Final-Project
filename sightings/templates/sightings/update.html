@@ -24,11 +24,15 @@
     </div>
   </div>
 </nav>
-		<form method="post">{% csrf_token %}
-			{{form.as_p}}
-			<br>
-			<input type="submit" name="Submit">
-		</form>
+<form method="post">{% csrf_token %}
+    {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
 <footer class="text-muted">
       <div class="container">
         <p class="float-right">
@@ -46,3 +50,25 @@
     {% endblock %}
   </body>
 </html>
+<script>
+    var createAllErrors = function() {
+        var form = $( this ),
+            errorList = $( "ul.errorMessages", form );
+
+        var showAllErrorMessages = function() {
+            errorList.empty();
+
+            // Find all invalid fields within the form.
+            var invalidFields = form.find( ":invalid" ).each( function( index, node ) {
+
+                // Find the field's corresponding label
+                var label = $( "label[for=" + node.id + "] "),
+                    // Opera incorrectly does not fill the validationMessage property.
+                    message = node.validationMessage || 'Invalid value.';
+
+                errorList
+                    .show()
+                    .append( "<li><span>" + label.html() + "</span> " + message + "</li>" );
+            });
+        };
+</script>
