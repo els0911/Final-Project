@@ -1,6 +1,9 @@
 # E4501 Tools For Analytics Final-Project: Tracking Squirrel Sightings
 
 ## Background
+Eccentric billionaire Joffrey Hosencratz just purchased the web development company you work for. You’ve met him once in an elevator and he was impressed with your skill in developing web applications with the Django framework. He also relayed that his most recent trip to Sedona, AZ has left him in a bit of trouble. See, he fancies the show Rick and Morty and a particular scene coupled with a traumatic childhood squirrel experience and a bad crystal bath experience in Sedona has left him wanting.
+
+He would like to start keeping track of all the known squirrels and plans to start with Central Park. He’s asked you to build an application that can import the 2018 Central Park Squirrel Census data and allow his team to add, update, and view squirrel data. 
 
 ## Web Application Introduction
 
@@ -19,5 +22,25 @@ python manage.py export_squirrel_data /path/to/file.csv
 ```
 
 ## Views
+### Map
 A view that shows a map that displays the location of the squirrel sightings on an [**OpenStreets map**](https://www.openstreetmap.org/about/).
 [Map](https://instance-2-288912.appspot.com/map/)
+
+### Sightings
+A view that lists all squirrel sightings with links to view each sighting.
+[Sightings]
+
+### Update
+A view to update a particular sighting.
+[Update]
+
+### Add
+A view to create a new sighting.
+[Add]
+
+### General Statistics
+A view with general stats about the sightings.
+[Stats]
+
+## Contributors
+
