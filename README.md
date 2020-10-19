@@ -44,6 +44,7 @@ A view with general stats about the sightings.
 
 ## Contributors
 Group name: Project 9
+
 Section: 2
 Contributors: Els Dai, Ping Hsun Lee
 UNI: [**ed2912**](https://github.com/els0911), 
